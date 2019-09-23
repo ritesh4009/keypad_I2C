@@ -3,16 +3,17 @@
 #include <Wire.h>
 #include <string.h>
 
-const byte ROWS = 4;
+const byte ROWS = 5;
 const byte COLUMNS =4;
-byte rowPins[ROWS] = {5,4,3,2}; //connect to row pinout of the keypad
-byte columnPins[COLUMNS] = {6,7,8,9}; //connect to column pinout of keypad
+byte rowPins[ROWS] = {6,5,4,3,2}; //connect to row pinout of the keypad
+byte columnPins[COLUMNS] = {7,8,9,10}; //connect to column pinout of keypad
 //Define symbols on keypad
 char hexakeys [ROWS][COLUMNS] = {
   {'A','B','#','*'},
   {'1','2','3','U'},
   {'4','5','6','D'},
-  {'7','8','9','E'}
+  {'7','8','9','E'},
+  {'L','0','R','C'}
 };
 
 Keypad Customkeypad = Keypad(makeKeymap (hexakeys),rowPins,columnPins,ROWS, COLUMNS);
@@ -27,9 +28,9 @@ void setup() {
   Wire.begin(50);
   Wire.onReceive (receiveevent);
   Wire.onRequest (requestEvent);
-  pinMode(10,OUTPUT);
   pinMode(11, OUTPUT);
   pinMode(12, OUTPUT);
+  pinMode(A0,OUTPUT);
   pinMode(13,OUTPUT);  // LED
   Serial.begin(9600);
 }

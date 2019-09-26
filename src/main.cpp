@@ -5,8 +5,8 @@
 
 const byte ROWS = 5;
 const byte COLUMNS =4;
-byte rowPins[ROWS] = {6,5,4,3,2}; //connect to row pinout of the keypad
-byte columnPins[COLUMNS] = {7,8,9,10}; //connect to column pinout of keypad
+byte rowPins[ROWS] = {6,7,8,9,10}; //connect to row pinout of the keypad
+byte columnPins[COLUMNS] = {2,3,4,5}; //connect to column pinout of keypad
 //Define symbols on keypad
 char hexakeys [ROWS][COLUMNS] = {
   {'A','B','#','*'},
